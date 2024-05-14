@@ -1,25 +1,18 @@
 const express = require('express');
+const { MovieIndex, MovieCreate, MovieUpdate, MovieDelete } = require('../controllers/movies.controller');
 
 const router = express.Router();
 
 // R - for reading  
-router.get('/',(req,res)=>{
-    res.send("Get all movie lists");
-});
+router.get('/',MovieIndex);
 
 // C - for createig movies
-router.post('/',(req,res)=>{
-    res.send("Post all movie lists");
-});
+router.post('/',MovieCreate);
 
 // U - for updating movies
-router.post('/:id',(req,res)=>{
-    res.send("Put single movie lists");
-});
+router.post('/:id',MovieUpdate);
 
 // D - for deleting movies
-router.post('/:id',(req,res)=>{
-    res.send("Delete single movie lists");
-});
+router.post('/:id',MovieDelete);
 
 module.exports = router;

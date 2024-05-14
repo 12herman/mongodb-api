@@ -9,10 +9,8 @@ app.get('/',(req,res)=> {
     res.json({message:"Hello student"})
 });
 
-// CRUD functionality
+// CRUD functionality ()
 app.use('/movies',movieRouters);
-
-
 
 
 app.listen(port,()=>{
